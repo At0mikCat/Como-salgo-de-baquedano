@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float movementSpeed = 5f;
     [SerializeField] private float mouseSensitivity = 2f;
     [SerializeField] private Transform cameraTransform;
+    private Rigidbody rb;
 
     bool canSprint = true;
 
@@ -16,6 +17,7 @@ public class PlayerController : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -28,13 +30,11 @@ public class PlayerController : MonoBehaviour
         cameraLimit = Mathf.Clamp(cameraLimit - mouseY, -90f, 90f); 
         cameraTransform.localEulerAngles = Vector3.right * cameraLimit;
 
-        Vector3 moveDirection = (transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal")).normalized;
-        transform.Translate(moveDirection * movementSpeed * Time.deltaTime, Space.World);
+        rb.velocity = transform.forward * movementSpeed * Input.GetAxis("Vertical") + transform.right * movementSpeed * Input.GetAxis("Horizontal");
 
         //if ((Si la stamina es 0))
         //{
-            // canSprint = false;
-            //StartCoroutine(RecoverStamina());
+        // canSprint = false;
         //}
     }
 
@@ -42,12 +42,12 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftShift) && canSprint)
         {
-            movementSpeed = 10f;
+            movementSpeed = 6f;
             //Disminuye la "stamina"
         }
         else
         {
-            movementSpeed = 5f;
+            movementSpeed = 3.5f;
         }
     }
 }
