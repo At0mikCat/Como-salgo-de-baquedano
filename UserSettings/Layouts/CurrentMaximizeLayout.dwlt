@@ -23,7 +23,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 5164
+  controlID: 38
   draggingID: 0
 --- !u!114 &2
 MonoBehaviour:
@@ -92,7 +92,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 5165
+  controlID: 39
   draggingID: 0
 --- !u!114 &4
 MonoBehaviour:
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 5166
+  controlID: 40
   draggingID: 0
 --- !u!114 &5
 MonoBehaviour:
@@ -199,7 +199,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 5167
+  controlID: 41
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -264,9 +264,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 84820000
-      m_LastClickedID: 33412
-      m_ExpandedIDs: da29ffff102cffff1a2dffffd681000068820000
+      m_SelectedIDs: 5a870000
+      m_LastClickedID: 34650
+      m_ExpandedIDs: 9825ffffd826ffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -700,9 +700,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -5.0214386, y: 1.286715, z: 2.1796758}
+    m_Target: {x: -3.4004917, y: -4.810986, z: 5.0611525}
     speed: 2
-    m_Value: {x: -5.0214386, y: 1.286715, z: 2.1796758}
+    m_Value: {x: -3.4004917, y: -4.810986, z: 5.0611525}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -748,13 +748,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.1984715, y: 0.43645647, z: -0.09934623, w: -0.8719284}
+    m_Target: {x: -0.11052766, y: 0.24540532, z: -0.028172787, w: -0.962696}
     speed: 2
-    m_Value: {x: -0.19847152, y: 0.43645647, z: -0.09934623, w: -0.8719284}
+    m_Value: {x: -0.110526696, y: 0.24540319, z: -0.028172541, w: -0.9626876}
   m_Size:
-    m_Target: 9.47413
+    m_Target: 10.789661
     speed: 2
-    m_Value: 9.47413
+    m_Value: 10.789661
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -922,7 +922,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Models/Mecha/source
+    - Assets
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -930,16 +930,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 65
   m_LastFolders:
-  - Assets/Models/Mecha/source
+  - Assets
   m_LastFoldersGridSize: 65
   m_LastProjectPath: C:\Users\marce\OneDrive\Documentos\GitHub\Como-salgo-de-baquedano
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ea880000
-    m_LastClickedID: 35050
-    m_ExpandedIDs: 0000000004410000fc410000de88000000ca9a3b
+    scrollPos: {x: 0, y: 12}
+    m_SelectedIDs: 04410000
+    m_LastClickedID: 16644
+    m_ExpandedIDs: 0000000004410000fc4100002442000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -967,7 +967,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000000441000000ca9a3b
+    m_ExpandedIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -992,9 +992,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 84820000
-    m_LastClickedInstanceID: 33412
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 5a870000
+    m_LastClickedInstanceID: 34650
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300009e5800003a430000d2430000d64300005c4300006a430000e658000028f3ffff644400006e440000484400005c440000ae850100ea6e0000527b00005c890000bc1a0100fa860000388a000084830000d6e40000ec8e000014eb000018eb00004ceb0000aac20000f666000022710000fc660000c666000000670000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1093,7 +1093,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 33412
+  m_LastSelectedObjectID: 34650
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1161,7 +1161,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 108
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:

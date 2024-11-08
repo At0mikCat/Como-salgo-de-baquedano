@@ -240,7 +240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7fe79be15c909f94ca478d15417f2f91, type: 3}
       propertyPath: m_Name
-      value: arbol mamahuevo
+      value: Arbol mamahuevo
       objectReference: {fileID: 0}
     - target: {fileID: 6836528675197101312, guid: 7fe79be15c909f94ca478d15417f2f91, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 457410431}
   - component: {fileID: 457410430}
   - component: {fileID: 457410429}
-  - component: {fileID: 457410433}
+  - component: {fileID: 457410435}
   - component: {fileID: 457410434}
   m_Layer: 0
   m_Name: Player
@@ -358,14 +358,29 @@ Transform:
   m_GameObject: {fileID: 457410427}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.36, y: 1.3330204, z: -7.35}
+  m_LocalPosition: {x: 2.36, y: 0.43, z: -7.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1502020481}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &457410433
+--- !u!114 &457410434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457410427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 698200f2dbad99d48a7fc6ead6f5c250, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 3.5
+  mouseSensitivity: 5
+  cameraTransform: {fileID: 1502020481}
+--- !u!54 &457410435
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -373,7 +388,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 457410427}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -392,21 +407,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &457410434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 457410427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 698200f2dbad99d48a7fc6ead6f5c250, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 5
-  mouseSensitivity: 5
-  cameraTransform: {fileID: 1502020481}
 --- !u!1 &499916394
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,7 +585,7 @@ GameObject:
   - component: {fileID: 632913253}
   - component: {fileID: 632913252}
   m_Layer: 0
-  m_Name: Peo
+  m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -598,7 +598,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632913251}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 5fe880a3d7d1c44428ad18a04b394f76, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1058,7 +1058,7 @@ GameObject:
   - component: {fileID: 1269725870}
   - component: {fileID: 1269725869}
   m_Layer: 0
-  m_Name: Peo
+  m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1288,7 +1288,7 @@ GameObject:
   - component: {fileID: 1467329095}
   - component: {fileID: 1467329094}
   m_Layer: 0
-  m_Name: Peo
+  m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1796,9 +1796,9 @@ SceneRoots:
   - {fileID: 301053281}
   - {fileID: 698142184}
   - {fileID: 1457911842}
+  - {fileID: 632913255}
   - {fileID: 1269725872}
   - {fileID: 1467329097}
-  - {fileID: 632913255}
   - {fileID: 602266797}
   - {fileID: 710317531}
   - {fileID: 203387099}
