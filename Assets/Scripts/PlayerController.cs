@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform cameraTransform;
     private Rigidbody rb;
 
-    bool canSprint = true;
+    //bool canSprint = true;
 
     private float cameraLimit = 0f;
 
@@ -31,23 +31,18 @@ public class PlayerController : MonoBehaviour
         cameraTransform.localEulerAngles = Vector3.right * cameraLimit;
 
         rb.velocity = transform.forward * movementSpeed * Input.GetAxis("Vertical") + transform.right * movementSpeed * Input.GetAxis("Horizontal");
-
-        //if ((Si la stamina es 0))
-        //{
-        // canSprint = false;
-        //}
     }
 
-    private void FixedUpdate()
-    {
-        if (Input.GetKey(KeyCode.LeftShift) && canSprint)
-        {
-            movementSpeed = 6f;
-            //Disminuye la "stamina"
-        }
-        else
-        {
-            movementSpeed = 3.5f;
-        }
-    }
+    //private void FixedUpdate()
+    //{
+    //    if (Input.GetKey(KeyCode.LeftShift) && canSprint)
+    //    {
+    //        movementSpeed = 6f;
+    //        //Disminuye la "stamina"
+    //    }
+    //    else
+    //    {
+    //        movementSpeed = 3.5f;
+    //    }
+    //}
 }
