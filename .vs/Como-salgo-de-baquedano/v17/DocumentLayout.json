@@ -3,11 +3,19 @@
   "WorkspaceRootPath": "C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{400D0436-2A92-B980-6C0D-1F36B4CB1261}|Assembly-CSharp.csproj|c:\\users\\marce\\onedrive\\documentos\\github\\como-salgo-de-baquedano\\assets\\scripts\\buttons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{400D0436-2A92-B980-6C0D-1F36B4CB1261}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\buttons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{400D0436-2A92-B980-6C0D-1F36B4CB1261}|Assembly-CSharp.csproj|c:\\users\\marce\\onedrive\\documentos\\github\\como-salgo-de-baquedano\\assets\\scripts\\startgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{400D0436-2A92-B980-6C0D-1F36B4CB1261}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\startgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{400D0436-2A92-B980-6C0D-1F36B4CB1261}|Assembly-CSharp.csproj|c:\\users\\marce\\onedrive\\documentos\\github\\como-salgo-de-baquedano\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{400D0436-2A92-B980-6C0D-1F36B4CB1261}|Assembly-CSharp.csproj|C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\assets\\scripts\\starttrainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{400D0436-2A92-B980-6C0D-1F36B4CB1261}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\starttrainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\Assets\\Scripts\\Buttons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Buttons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{400D0436-2A92-B980-6C0D-1F36B4CB1261}|Assembly-CSharp.csproj|C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{400D0436-2A92-B980-6C0D-1F36B4CB1261}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -23,28 +31,50 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Buttons.cs",
-              "DocumentMoniker": "C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\Assets\\Scripts\\Buttons.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Buttons.cs",
-              "ToolTip": "C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\Assets\\Scripts\\Buttons.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Buttons.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "StartGame.cs",
+              "DocumentMoniker": "C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\Assets\\Scripts\\StartGame.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\StartGame.cs",
+              "ToolTip": "C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\Assets\\Scripts\\StartGame.cs",
+              "RelativeToolTip": "Assets\\Scripts\\StartGame.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-08T22:15:56.513Z",
+              "WhenOpened": "2024-11-10T17:27:47.639Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "StartTrainMenu.cs",
+              "DocumentMoniker": "C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\Assets\\Scripts\\StartTrainMenu.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\StartTrainMenu.cs",
+              "ToolTip": "C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\Assets\\Scripts\\StartTrainMenu.cs",
+              "RelativeToolTip": "Assets\\Scripts\\StartTrainMenu.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T17:05:30.856Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Buttons.cs",
+              "DocumentMoniker": "C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\Assets\\Scripts\\Buttons.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Buttons.cs",
+              "ToolTip": "C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\Assets\\Scripts\\Buttons.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Buttons.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T22:15:56.513Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\Assets\\Scripts\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerController.cs",
               "ToolTip": "C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\Assets\\Scripts\\PlayerController.cs",
               "RelativeToolTip": "Assets\\Scripts\\PlayerController.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAowCQAAAAdAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T03:42:34.138Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-07T03:42:34.138Z"
             }
           ]
         }

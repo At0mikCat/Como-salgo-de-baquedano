@@ -166,8 +166,8 @@
     <Compile Include="Assets\External Packages\AstarPathfinding\AstarPathfindingProject\Legacy\Editor\LegacyAIPathEditor.cs" />
     <Compile Include="Assets\External Packages\AstarPathfinding\AstarPathfindingProject\Core\GraphUpdateShape.cs" />
     <Compile Include="Assets\External Packages\AstarPathfinding\AstarPathfindingProject\Core\Misc\HierarchicalGraph.cs" />
-    <Compile Include="Assets\External Packages\AstarPathfinding\AstarPathfindingProject\Behaviors\Patrol.cs" />
     <Compile Include="Assets\External Packages\AstarPathfinding\AstarPathfindingProject\Core\Misc\WindowsStoreCompatibility.cs" />
+    <Compile Include="Assets\External Packages\AstarPathfinding\AstarPathfindingProject\Behaviors\Patrol.cs" />
     <Compile Include="Assets\External Packages\AstarPathfinding\AstarPathfindingProject\ExampleScenes\ExampleScripts\DoorController.cs" />
     <Compile Include="Assets\External Packages\AstarPathfinding\AstarPathfindingProject\ExampleScenes\ExampleScripts\AstarSmoothFollow2.cs" />
   </ItemGroup>
