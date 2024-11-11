@@ -118,7 +118,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 11569
+  controlID: 18
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 11570
+  controlID: 19
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 11571
+  controlID: 20
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 11572
+  controlID: 21
   draggingID: 0
 --- !u!114 &9
 MonoBehaviour:
@@ -217,8 +217,8 @@ MonoBehaviour:
     y: 0
     width: 301
     height: 634
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -299,8 +299,8 @@ MonoBehaviour:
     y: 0
     width: 436
     height: 939
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -442,9 +442,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: c40d0100
-      m_LastClickedID: 69060
-      m_ExpandedIDs: aeb8feff8cbafeffcebdfeffa0c0feff52c9fefff0cafeffbccffeff6ed0feff68d4feff4208ffff6a11ffffd811ffffd412ffff00b90000e6c4000098c50000bc0c0100
+      m_SelectedIDs: ca5d0000
+      m_LastClickedID: 24010
+      m_ExpandedIDs: 2cfbffffd45b0000b0600000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -850,9 +850,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -2.202386, y: 7.1422787, z: 34.446854}
+    m_Target: {x: -63.357346, y: -53.991222, z: -48.467514}
     speed: 2
-    m_Value: {x: -2.202386, y: 7.1422787, z: 34.446854}
+    m_Value: {x: -63.357346, y: -53.991222, z: -48.467514}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -898,13 +898,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.0018019866, y: 0.07552956, z: -0.00016300933, w: -0.99717605}
+    m_Target: {x: -0.1322101, y: 0.8600553, z: -0.28053784, w: -0.40529585}
     speed: 2
-    m_Value: {x: -0.0018019254, y: 0.075527, z: -0.00016300379, w: -0.9971422}
+    m_Value: {x: -0.13201158, y: 0.8598054, z: -0.27903, w: -0.40675527}
   m_Size:
-    m_Target: 26.601477
+    m_Target: 50.82069
     speed: 2
-    m_Value: 26.601477
+    m_Value: 50.82069
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1044,7 +1044,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1052,16 +1052,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 65
   m_LastFolders:
-  - Assets/Scenes
+  - Assets
   m_LastFoldersGridSize: 65
   m_LastProjectPath: C:\Users\marce\OneDrive\Documentos\GitHub\Como-salgo-de-baquedano
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: be410000
-    m_LastClickedID: 16830
-    m_ExpandedIDs: 000000000641000000ca9a3b
+    m_SelectedIDs: 3e620000
+    m_LastClickedID: 25150
+    m_ExpandedIDs: 000000003e62000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1089,7 +1089,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000000641000000ca9a3b
+    m_ExpandedIDs: 000000003e620000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1116,7 +1116,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300009e5800003a430000d2430000d64300005c4300006a430000e658000028f3ffff644400006e440000484400005c440000ae850100ea6e0000527b00005c890000bc1a0100fa860000388a000084830000d6e40000ec8e000014eb000018eb00004ceb0000aac20000f666000022710000fc660000c66600000067000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
