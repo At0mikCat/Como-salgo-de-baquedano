@@ -30,7 +30,7 @@ public class StartTrainMenu : MonoBehaviour
 
     IEnumerator CooldownForAnimation()
     {
-        yield return new WaitForSeconds(1.6f);
+        yield return new WaitForSeconds(2.4f);
 
         float elapsedTime = 0f;
 
