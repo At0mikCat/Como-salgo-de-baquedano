@@ -365,8 +365,9 @@
 "Assets/External Packages/PSXShaderKit/Scripts/PSXShaderManager.cs"
 "Assets/Scripts/MainMenu/StartTrainMenu.cs"
 "Assets/Scripts/TestScene/AI.cs"
+"Assets/Scripts/TestScene/InitialFade.cs"
+"Assets/Scripts/TestScene/InstancingEntities.cs"
 "Assets/Scripts/TestScene/PlayerController.cs"
-"Assets/Scripts/TestScene/StartGame.cs"
 -langversion:9.0
 /deterministic
 /optimize+

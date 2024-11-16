@@ -22088,7 +22088,11 @@
       "DisplayName": "Writing Assembly-CSharp.rsp",
       "ActionType": "WriteFile",
       "PayloadOffset": 1647237,
+<<<<<<< Updated upstream
       "PayloadLength": 33517,
+=======
+      "PayloadLength": 33568,
+>>>>>>> Stashed changes
       "PayloadDebugContentSnippet": "-target:library\n-out:\"Library/",
       "Inputs": [],
       "Outputs": [
@@ -22100,7 +22104,11 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.rsp2",
       "DisplayName": "Writing Assembly-CSharp.rsp2",
       "ActionType": "WriteFile",
+<<<<<<< Updated upstream
       "PayloadOffset": 1680841,
+=======
+      "PayloadOffset": 1680892,
+>>>>>>> Stashed changes
       "PayloadLength": 0,
       "PayloadDebugContentSnippet": "",
       "Inputs": [],
@@ -22357,8 +22365,9 @@
         "Assets/External Packages/PSXShaderKit/Scripts/PSXShaderManager.cs",
         "Assets/Scripts/MainMenu/StartTrainMenu.cs",
         "Assets/Scripts/TestScene/AI.cs",
+        "Assets/Scripts/TestScene/InitialFade.cs",
+        "Assets/Scripts/TestScene/InstancingEntities.cs",
         "Assets/Scripts/TestScene/PlayerController.cs",
-        "Assets/Scripts/TestScene/StartGame.cs",
         "C:/Program Files/Unity/Hub/Editor/2022.3.36f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll",
         "C:/Program Files/Unity/Hub/Editor/2022.3.36f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll",
         "Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.rsp"
@@ -22619,7 +22628,11 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.dll.mvfrm.rsp",
       "DisplayName": "Writing Assembly-CSharp.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
+<<<<<<< Updated upstream
       "PayloadOffset": 1680937,
+=======
+      "PayloadOffset": 1680988,
+>>>>>>> Stashed changes
       "PayloadLength": 9969,
       "PayloadDebugContentSnippet": "Library\\Bee\\artifacts\\mvdfrm\\U",
       "Inputs": [],
