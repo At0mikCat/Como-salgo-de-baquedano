@@ -6,43 +6,52 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float movementSpeed = 5f;
     [SerializeField] private float mouseSensitivity = 2f;
+    private float cameraLimit = 0f;
+
     [SerializeField] private Transform cameraTransform;
     private Rigidbody rb;
+    private Animator animator;
 
-    //bool canSprint = true;
-
-    private float cameraLimit = 0f;
+    bool isInCinematic = false;
 
     private void Awake()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
+        if(!isInCinematic)
+        {
+            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
+            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
 
-        transform.Rotate(Vector3.up * mouseX);
+            transform.Rotate(Vector3.up * mouseX);
 
-        cameraLimit = Mathf.Clamp(cameraLimit - mouseY, -90f, 90f); 
-        cameraTransform.localEulerAngles = Vector3.right * cameraLimit;
+            cameraLimit = Mathf.Clamp(cameraLimit - mouseY, -90f, 90f);
+            cameraTransform.localEulerAngles = Vector3.right * cameraLimit;
 
-        rb.velocity = transform.forward * movementSpeed * Input.GetAxis("Vertical") + transform.right * movementSpeed * Input.GetAxis("Horizontal");
+            rb.velocity = transform.forward * movementSpeed * Input.GetAxis("Vertical") + transform.right * movementSpeed * Input.GetAxis("Horizontal");
+        }
     }
 
-    //private void FixedUpdate()
-    //{
-    //    if (Input.GetKey(KeyCode.LeftShift) && canSprint)
-    //    {
-    //        movementSpeed = 6f;
-    //        //Disminuye la "stamina"
-    //    }
-    //    else
-    //    {
-    //        movementSpeed = 3.5f;
-    //    }
-    //}
+    IEnumerator TestCinematic1()
+    {
+        yield return new WaitForSeconds(4f);
+        animator.SetBool("LookUp", false);
+        isInCinematic = false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("CinematicTrigger1"))
+        {
+            isInCinematic = true;
+            animator.SetBool("LookUp", true);
+            StartCoroutine(TestCinematic1());
+        }
+    }
 }
