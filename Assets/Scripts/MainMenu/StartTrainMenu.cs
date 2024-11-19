@@ -13,7 +13,11 @@ public class StartTrainMenu : MonoBehaviour
 
     private void Awake()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
         animator = GetComponent<Animator>();
+        StartCoroutine(Start());
     }
 
     public void GoToGame()
@@ -26,6 +30,21 @@ public class StartTrainMenu : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    IEnumerator Start()
+    {
+        float elapsedTime = 0f;
+
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            fadeCanvasGroup.alpha = Mathf.Lerp(1f, 0f, elapsedTime / fadeDuration);
+            yield return null;
+        }
+
+        fadeCanvasGroup.alpha = 0f;
+
     }
 
     IEnumerator CooldownForAnimation()
@@ -43,6 +62,6 @@ public class StartTrainMenu : MonoBehaviour
 
         fadeCanvasGroup.alpha = 1f;
         yield return new WaitForSeconds(1.8f);
-        SceneManager.LoadScene("TestScene");
+        SceneManager.LoadScene("Acto1");
     }
 }
