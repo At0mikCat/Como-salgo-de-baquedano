@@ -366,7 +366,6 @@
 "Assets/Scripts/Acto1/ToGame.cs"
 "Assets/Scripts/MainMenu/StartTrainMenu.cs"
 "Assets/Scripts/TestScene/AI.cs"
-"Assets/Scripts/TestScene/Checkpoint.cs"
 "Assets/Scripts/TestScene/InstancingEntities.cs"
 "Assets/Scripts/TestScene/PlayerController.cs"
 "Assets/Scripts/TestScene/StartGame.cs"

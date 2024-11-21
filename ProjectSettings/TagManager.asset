@@ -8,6 +8,7 @@ TagManager:
   - Win
   - ActivateFastPhase
   - Enemy
+  - Checkpoint
   layers:
   - Default
   - TransparentFX

@@ -11,14 +11,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float fadeDuration = 1.5f;
     private float cameraLimit = 0f;
 
+    [SerializeField] private CanvasGroup fadeCanvasGroup;
     [SerializeField] private Transform cameraTransform;
+    private Vector3 checkpointPosition;
+
     private Rigidbody rb;
     private Animator animator;
-    [SerializeField] private CanvasGroup fadeCanvasGroup;
 
     bool isInCinematic = false;
 
-    public Animator TestFinal;
     public NavMeshAgent navMeshAgent;
     private void Awake()
     {
@@ -30,7 +31,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if(!isInCinematic)
+        if (!isInCinematic)
         {
             float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
             float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
@@ -44,16 +45,8 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    IEnumerator TestCinematic1()
-    {
-        yield return new WaitForSeconds(4f);
-        animator.SetBool("LookUp", false);
-        isInCinematic = false;
-    }
-
     IEnumerator TestWin()
     {
-        TestFinal.SetBool("Win", true);
         yield return new WaitForSeconds(3f);
 
         float elapsedTime = 0f;
@@ -69,7 +62,7 @@ public class PlayerController : MonoBehaviour
         SceneManager.LoadScene("Main Menu");
     }
 
-    IEnumerator TestLose()
+    IEnumerator Respawn()
     {
         float elapsedTime = 0f;
         while (elapsedTime < fadeDuration)
@@ -81,35 +74,38 @@ public class PlayerController : MonoBehaviour
         fadeCanvasGroup.alpha = 1f;
 
         yield return new WaitForSeconds(1.8f);
-        SceneManager.LoadScene("Main Menu");
-    }
+        gameObject.transform.position = checkpointPosition;
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.tag == "Enemy")
+        elapsedTime = 0f;
+        while (elapsedTime < fadeDuration)
         {
-            StartCoroutine(TestLose());
+            elapsedTime += Time.deltaTime;
+            fadeCanvasGroup.alpha = Mathf.Lerp(1f, 0f, elapsedTime / fadeDuration);
+            yield return null;
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Win"))
+        if (other.CompareTag("Win"))
         {
             isInCinematic = true;
             StartCoroutine(TestWin());
         }
 
-        if (other.CompareTag("CinematicTrigger1"))
+        if (other.CompareTag("Enemy"))
         {
-            isInCinematic = true;
-            animator.SetBool("LookUp", true);
-            StartCoroutine(TestCinematic1());
+            StartCoroutine(Respawn());
+        }
+
+        if(other.CompareTag("Checkpoint"))
+        {
+            checkpointPosition = other.transform.position;
         }
 
         if (other.CompareTag("ActivateFastPhase"))
         {
-            navMeshAgent.speed = 7f; 
+            navMeshAgent.speed = 7f;
             navMeshAgent.stoppingDistance = 1f;
         }
     }
