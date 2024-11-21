@@ -15,6 +15,7 @@ public class InstancingEntities : MonoBehaviour
     [SerializeField] Vector3 offset; 
     [SerializeField] float spacing = 2.0f;
     [SerializeField] float randomOffsetRange = 0.5f;
+    [SerializeField] Vector3 scale = Vector3.one;
 
     private Vector3[] randomOffsets;
 
@@ -42,7 +43,7 @@ public class InstancingEntities : MonoBehaviour
             {
                 Vector3 basePosition = new Vector3(x * spacing, 0, z * spacing) + offset;
                 Vector3 positionWithOffset = basePosition + randomOffsets[i];
-                matrices[i] = Matrix4x4.TRS(positionWithOffset, Quaternion.identity, Vector3.one);
+                matrices[i] = Matrix4x4.TRS(positionWithOffset, Quaternion.identity, scale); 
                 i++;
             }
         }

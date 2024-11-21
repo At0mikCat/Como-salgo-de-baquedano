@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - CinematicTrigger1
+  - Win
+  - ActivateFastPhase
+  - Enemy
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
