@@ -363,6 +363,7 @@
 "Assets/External Packages/PSXShaderKit/Demo/SpookyOrbFloat.cs"
 "Assets/External Packages/PSXShaderKit/Scripts/PSXPostProcessEffect.cs"
 "Assets/External Packages/PSXShaderKit/Scripts/PSXShaderManager.cs"
+"Assets/Scripts/Acto1/ToGame.cs"
 "Assets/Scripts/MainMenu/StartTrainMenu.cs"
 "Assets/Scripts/TestScene/AI.cs"
 "Assets/Scripts/TestScene/InstancingEntities.cs"
