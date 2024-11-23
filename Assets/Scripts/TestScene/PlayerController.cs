@@ -6,21 +6,21 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("PlayerController")]
     [SerializeField] private float movementSpeed = 5f;
     [SerializeField] private float mouseSensitivity = 2f;
+    private Rigidbody rb;
+    private Animator animator;
+    bool isInCinematic = false;
+
+    [Header("External")]
     [SerializeField] private float fadeDuration = 1.5f;
     private float cameraLimit = 0f;
-
     [SerializeField] private CanvasGroup fadeCanvasGroup;
     [SerializeField] private Transform cameraTransform;
     private Vector3 checkpointPosition;
-
-    private Rigidbody rb;
-    private Animator animator;
-
-    bool isInCinematic = false;
-
     public NavMeshAgent navMeshAgent;
+
     private void Awake()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -42,6 +42,31 @@ public class PlayerController : MonoBehaviour
             cameraTransform.localEulerAngles = Vector3.right * cameraLimit;
 
             rb.velocity = transform.forward * movementSpeed * Input.GetAxis("Vertical") + transform.right * movementSpeed * Input.GetAxis("Horizontal");
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Win"))
+        {
+            isInCinematic = true;
+            StartCoroutine(TestWin());
+        }
+
+        if (other.CompareTag("Enemy"))
+        {
+            StartCoroutine(Respawn());
+        }
+
+        if(other.CompareTag("Checkpoint"))
+        {
+            checkpointPosition = other.transform.position;
+        }
+
+        if(other.CompareTag("Intro"))
+        {
+            isInCinematic = true;
+            StartCoroutine(Intro());
         }
     }
 
@@ -85,28 +110,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    IEnumerator Intro()
     {
-        if (other.CompareTag("Win"))
-        {
-            isInCinematic = true;
-            StartCoroutine(TestWin());
-        }
-
-        if (other.CompareTag("Enemy"))
-        {
-            StartCoroutine(Respawn());
-        }
-
-        if(other.CompareTag("Checkpoint"))
-        {
-            checkpointPosition = other.transform.position;
-        }
-
-        if (other.CompareTag("ActivateFastPhase"))
-        {
-            navMeshAgent.speed = 7f;
-            navMeshAgent.stoppingDistance = 1f;
-        }
+        animator.enabled = true;
+        animator.SetTrigger("Intro");
+        yield return new WaitForSeconds(2.2f);
+        animator.enabled = false;
+        isInCinematic = false;
     }
 }
