@@ -34,11 +34,9 @@ public class PlayerController : MonoBehaviour
         if (!isInCinematic)
         {
             float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
-            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
 
             transform.Rotate(Vector3.up * mouseX);
 
-            cameraLimit = Mathf.Clamp(cameraLimit - mouseY, -90f, 90f);
             cameraTransform.localEulerAngles = Vector3.right * cameraLimit;
 
             rb.velocity = transform.forward * movementSpeed * Input.GetAxis("Vertical") + transform.right * movementSpeed * Input.GetAxis("Horizontal");

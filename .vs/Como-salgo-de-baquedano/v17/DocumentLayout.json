@@ -3,7 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{400D0436-2A92-B980-6C0D-1F36B4CB1261}|Assembly-CSharp.csproj|c:\\users\\marce\\onedrive\\documentos\\github\\como-salgo-de-baquedano\\assets\\scripts\\testscene\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{400D0436-2A92-B980-6C0D-1F36B4CB1261}|Assembly-CSharp.csproj|c:\\users\\marce\\onedrive\\documentos\\github\\como-salgo-de-baquedano\\assets\\scripts\\testscene\\audio3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{400D0436-2A92-B980-6C0D-1F36B4CB1261}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\testscene\\audio3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{400D0436-2A92-B980-6C0D-1F36B4CB1261}|Assembly-CSharp.csproj|C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\assets\\scripts\\testscene\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{400D0436-2A92-B980-6C0D-1F36B4CB1261}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\testscene\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -21,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{400D0436-2A92-B980-6C0D-1F36B4CB1261}|Assembly-CSharp.csproj|C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\assets\\scripts\\testscene\\ai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{400D0436-2A92-B980-6C0D-1F36B4CB1261}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\testscene\\ai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{400D0436-2A92-B980-6C0D-1F36B4CB1261}|Assembly-CSharp.csproj|C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\assets\\scripts\\testscene\\instancingentities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{400D0436-2A92-B980-6C0D-1F36B4CB1261}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\testscene\\instancingentities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\Assets\\Scripts\\StartGame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -49,6 +49,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\Assets\\Scripts\\TestScene\\Checkpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\TestScene\\Checkpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\Assets\\Scripts\\TestScene\\InstancingEntities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\TestScene\\InstancingEntities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,8 +62,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Audio3D.cs",
+              "DocumentMoniker": "C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\Assets\\Scripts\\TestScene\\Audio3D.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\TestScene\\Audio3D.cs",
+              "ToolTip": "C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\Assets\\Scripts\\TestScene\\Audio3D.cs",
+              "RelativeToolTip": "Assets\\Scripts\\TestScene\\Audio3D.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-24T23:39:08.675Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 11,
@@ -74,7 +91,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ToGame.cs",
               "DocumentMoniker": "C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\Assets\\Scripts\\Acto1\\ToGame.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Acto1\\ToGame.cs",
@@ -86,7 +103,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "StartGame.cs",
               "DocumentMoniker": "C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\Assets\\Scripts\\TestScene\\StartGame.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\TestScene\\StartGame.cs",
@@ -98,7 +115,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "AI.cs",
               "DocumentMoniker": "C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\Assets\\Scripts\\TestScene\\AI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\TestScene\\AI.cs",
@@ -110,7 +127,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 12,
               "Title": "InstancingEntities.cs",
               "DocumentMoniker": "C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\Assets\\Scripts\\TestScene\\InstancingEntities.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\TestScene\\InstancingEntities.cs",
@@ -122,20 +139,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\Assets\\Scripts\\TestScene\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\TestScene\\PlayerController.cs",
               "ToolTip": "C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\Assets\\Scripts\\TestScene\\PlayerController.cs",
               "RelativeToolTip": "Assets\\Scripts\\TestScene\\PlayerController.cs",
-              "ViewState": "AQIAAF0AAAAAAAAAAAAQwHUAAAAhAAAA",
+              "ViewState": "AQIAABYAAAAAAAAAAADwvyYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T13:53:08.049Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-18T13:53:08.049Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "StartTrainMenu.cs",
               "DocumentMoniker": "C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\Assets\\Scripts\\MainMenu\\StartTrainMenu.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MainMenu\\StartTrainMenu.cs",
