@@ -10,6 +10,9 @@ TagManager:
   - Enemy
   - Checkpoint
   - Intro
+  - Phase1
+  - Phase2
+  - Phase3
   layers:
   - Default
   - TransparentFX

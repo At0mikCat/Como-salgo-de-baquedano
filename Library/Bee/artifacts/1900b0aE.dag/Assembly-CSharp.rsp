@@ -366,13 +366,14 @@
 "Assets/External Packages/PSXShaderKit/Demo/SpookyOrbFloat.cs"
 "Assets/External Packages/PSXShaderKit/Scripts/PSXPostProcessEffect.cs"
 "Assets/External Packages/PSXShaderKit/Scripts/PSXShaderManager.cs"
-"Assets/Scripts/Acto1/ToGame.cs"
+"Assets/Scripts/Act 1/ToGame.cs"
+"Assets/Scripts/Act 2 (Game)/AI.cs"
+"Assets/Scripts/Act 2 (Game)/Audio3D.cs"
+"Assets/Scripts/Act 2 (Game)/PlayerController.cs"
+"Assets/Scripts/Act 2 (Game)/Psychosis.cs"
+"Assets/Scripts/Act 2 (Game)/StartGame.cs"
 "Assets/Scripts/InstancingEntities.cs"
 "Assets/Scripts/MainMenu/StartTrainMenu.cs"
-"Assets/Scripts/TestScene/AI.cs"
-"Assets/Scripts/TestScene/Audio3D.cs"
-"Assets/Scripts/TestScene/PlayerController.cs"
-"Assets/Scripts/TestScene/StartGame.cs"
 -langversion:9.0
 /deterministic
 /optimize+
