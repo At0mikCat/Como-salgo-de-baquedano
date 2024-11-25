@@ -60,16 +60,17 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.36f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\TestScene\AI.cs" />
+    <Compile Include="Assets\Scripts\Act 2 (Game)\PlayerController.cs" />
     <Compile Include="Assets\Scripts\InstancingEntities.cs" />
+    <Compile Include="Assets\Scripts\Act 2 (Game)\Audio3D.cs" />
     <Compile Include="Assets\External Packages\PSXShaderKit\Scripts\PSXShaderManager.cs" />
-    <Compile Include="Assets\Scripts\Acto1\ToGame.cs" />
     <Compile Include="Assets\External Packages\PSXShaderKit\Scripts\PSXPostProcessEffect.cs" />
     <Compile Include="Assets\External Packages\PSXShaderKit\Demo\PSXExample_CameraMovement.cs" />
-    <Compile Include="Assets\Scripts\TestScene\StartGame.cs" />
-    <Compile Include="Assets\Scripts\TestScene\Audio3D.cs" />
+    <Compile Include="Assets\Scripts\Act 2 (Game)\StartGame.cs" />
     <Compile Include="Assets\External Packages\PSXShaderKit\Demo\SpookyOrbFloat.cs" />
-    <Compile Include="Assets\Scripts\TestScene\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Act 2 (Game)\Psychosis.cs" />
+    <Compile Include="Assets\Scripts\Act 2 (Game)\AI.cs" />
+    <Compile Include="Assets\Scripts\Act 1\ToGame.cs" />
     <Compile Include="Assets\Scripts\MainMenu\StartTrainMenu.cs" />
   </ItemGroup>
   <ItemGroup>
