@@ -24,6 +24,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform cameraTransform;
     private Vector3 checkpointPosition;
 
+    [Header("Phase Timing")]
+    [SerializeField] private float phase1Time = 30f;
+    [SerializeField] private float phase2Time = 45f;
+    [SerializeField] private float phase3Time = 60f;
+
+    [SerializeField] private float timer = 0f;
+    private int currentPhase = 0; 
+
     private void Awake()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -36,13 +44,35 @@ public class PlayerController : MonoBehaviour
     {
         if (!isInCinematic)
         {
+            // Movimiento del jugador
             float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
-
             transform.Rotate(Vector3.up * mouseX);
-
             cameraTransform.localEulerAngles = Vector3.right * cameraLimit;
+            rb.velocity = transform.forward * movementSpeed * Input.GetAxis("Vertical")
+                          + transform.right * movementSpeed * Input.GetAxis("Horizontal");
 
-            rb.velocity = transform.forward * movementSpeed * Input.GetAxis("Vertical") + transform.right * movementSpeed * Input.GetAxis("Horizontal");
+            timer += Time.deltaTime;
+
+            HandlePhaseByTime();
+        }
+    }
+
+    private void HandlePhaseByTime()
+    {
+        if (currentPhase < 1 && timer >= phase1Time)
+        {
+            currentPhase = 1;
+            psychosis.TriggerPsychosis(1);
+        }
+        else if (currentPhase < 2 && timer >= phase2Time)
+        {
+            currentPhase = 2;
+            psychosis.TriggerPsychosis(2);
+        }
+        else if (currentPhase < 3 && timer >= phase3Time)
+        {
+            currentPhase = 3;
+            psychosis.TriggerPsychosis(3);
         }
     }
 
@@ -59,37 +89,31 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(Respawn());
         }
 
-        if(other.CompareTag("Checkpoint"))
+        if (other.CompareTag("Checkpoint"))
         {
             checkpointPosition = other.transform.position;
         }
 
-        if(other.CompareTag("Intro"))
+        if (other.CompareTag("Intro"))
         {
             isInCinematic = true;
             StartCoroutine(Intro());
         }
 
-        if (other.CompareTag("Phase1"))
+        if (other.CompareTag("Phase1") && currentPhase < 1)
         {
+            currentPhase = 1;
             psychosis.TriggerPsychosis(1);
         }
-        else if (other.CompareTag("Phase2"))
+        else if (other.CompareTag("Phase2") && currentPhase < 2)
         {
+            currentPhase = 2;
             psychosis.TriggerPsychosis(2);
         }
-        else if (other.CompareTag("Phase3"))
+        else if (other.CompareTag("Phase3") && currentPhase < 3)
         {
+            currentPhase = 3;
             psychosis.TriggerPsychosis(3);
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Phase1") || other.CompareTag("Phase2") || other.CompareTag("Phase3"))
-        {
-            psychosis.ResetEffects();
-
         }
     }
 
@@ -141,4 +165,5 @@ public class PlayerController : MonoBehaviour
         animator.enabled = false;
         isInCinematic = false;
     }
+
 }
