@@ -6970,6 +6970,9 @@ MonoBehaviour:
   fadeDuration: 0.5
   fadeCanvasGroup: {fileID: 808620168}
   cameraTransform: {fileID: 1502020481}
+  phase1Time: 5
+  phase2Time: 10
+  phase3Time: 15
 --- !u!54 &457410435
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16095,7 +16098,7 @@ Transform:
   m_GameObject: {fileID: 1017486223}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 96.8547, y: -5.07, z: -10.17}
+  m_LocalPosition: {x: 96.8547, y: -5.07, z: 30.06}
   m_LocalScale: {x: 9.28819, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27904,7 +27907,7 @@ Transform:
   m_GameObject: {fileID: 1662933281}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 96.8547, y: -5.07, z: 33.79}
+  m_LocalPosition: {x: 96.8547, y: -5.07, z: 22.11}
   m_LocalScale: {x: 9.28819, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -34120,7 +34123,7 @@ Transform:
   m_GameObject: {fileID: 2056074972}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 96.8547, y: -5.07, z: -3.19}
+  m_LocalPosition: {x: 96.8547, y: -5.07, z: 34.36}
   m_LocalScale: {x: 9.28819, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
