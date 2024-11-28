@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour
     bool isInCinematic = false;
 
     [Header("Exotic references")]
-    public NavMeshAgent navMeshAgent;
     public Psychosis psychosis;
 
     [Header("External")]
@@ -28,6 +27,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float phase1Time = 30f;
     [SerializeField] private float phase2Time = 45f;
     [SerializeField] private float phase3Time = 60f;
+
+    [SerializeField] private float duration = 300f;
 
     [SerializeField] private float timer = 0f;
     private int currentPhase = 0; 
@@ -44,7 +45,6 @@ public class PlayerController : MonoBehaviour
     {
         if (!isInCinematic)
         {
-            // Movimiento del jugador
             float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
             transform.Rotate(Vector3.up * mouseX);
             cameraTransform.localEulerAngles = Vector3.right * cameraLimit;
@@ -52,6 +52,12 @@ public class PlayerController : MonoBehaviour
                           + transform.right * movementSpeed * Input.GetAxis("Horizontal");
 
             timer += Time.deltaTime;
+
+            //final del desmayo
+            if(timer >= duration)
+            {
+                StartCoroutine(End3());
+            }
 
             HandlePhaseByTime();
         }
@@ -78,15 +84,31 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Win"))
+        if (other.CompareTag("End1"))
         {
-            isInCinematic = true;
-            StartCoroutine(TestWin());
+            //final de salida
+            StartCoroutine(End1());
+        }
+
+        if (other.CompareTag("End2"))
+        {
+            //final de cabina
+            StartCoroutine(End2());
         }
 
         if (other.CompareTag("Enemy"))
         {
             StartCoroutine(Respawn());
+        }
+
+        if (other.CompareTag("StairsUp"))
+        {
+            movementSpeed = 8f;
+        }
+
+        if (other.CompareTag("StairsDown"))
+        {
+            movementSpeed = 4f;
         }
 
         if (other.CompareTag("Checkpoint"))
@@ -117,7 +139,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    IEnumerator TestWin()
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("StairsUp"))
+        {
+            movementSpeed = 6.2f;
+        }
+
+        if (other.CompareTag("StairsDown"))
+        {
+            movementSpeed = 6.2f;
+        }
+    }
+
+    IEnumerator End1()
     {
         yield return new WaitForSeconds(3f);
 
@@ -131,7 +166,41 @@ public class PlayerController : MonoBehaviour
         fadeCanvasGroup.alpha = 1f;
 
         yield return new WaitForSeconds(1.8f);
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene("End1");
+    }
+
+    IEnumerator End2()
+    {
+        yield return new WaitForSeconds(3f);
+
+        float elapsedTime = 0f;
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            fadeCanvasGroup.alpha = Mathf.Lerp(0f, 1f, elapsedTime / fadeDuration);
+            yield return null;
+        }
+        fadeCanvasGroup.alpha = 1f;
+
+        yield return new WaitForSeconds(1.8f);
+        SceneManager.LoadScene("End2");
+    }
+
+    IEnumerator End3()
+    {
+        yield return new WaitForSeconds(3f);
+
+        float elapsedTime = 0f;
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            fadeCanvasGroup.alpha = Mathf.Lerp(0f, 1f, elapsedTime / fadeDuration);
+            yield return null;
+        }
+        fadeCanvasGroup.alpha = 1f;
+
+        yield return new WaitForSeconds(1.8f);
+        SceneManager.LoadScene("End3");
     }
 
     IEnumerator Respawn()
