@@ -13,6 +13,10 @@ TagManager:
   - Phase1
   - Phase2
   - Phase3
+  - End1
+  - End2
+  - StairsUp
+  - StairsDown
   layers:
   - Default
   - TransparentFX

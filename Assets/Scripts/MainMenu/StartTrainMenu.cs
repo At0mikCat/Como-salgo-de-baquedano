@@ -27,6 +27,11 @@ public class StartTrainMenu : MonoBehaviour
         StartCoroutine(CooldownForAnimation());
     }
 
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void ExitGame()
     {
         Application.Quit();
