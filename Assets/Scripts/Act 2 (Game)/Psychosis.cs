@@ -8,8 +8,8 @@ public class Psychosis : MonoBehaviour
 {
     public PsychosisPhase currentPhase = PsychosisPhase.None;
 
+    [Header("Post-Processing Effects")]
     [SerializeField] private PostProcessVolume postProcessVolume;
-
     [SerializeField] private float offset = 1.5f;
 
     private DepthOfField depthOfField;
@@ -18,16 +18,23 @@ public class Psychosis : MonoBehaviour
     private Vignette vignette;
     private ColorGrading colorGrading;
 
+    [Header("Enemy Setup")]
     [SerializeField] private GameObject enemyPrefab;
 
-    [SerializeField] private List<GameObject> phase1Objects;
-    [SerializeField] private List<GameObject> phase2Objects;
-    [SerializeField] private List<GameObject> phase3Objects;
+    [Header("Phase Object Parents")]
+    [SerializeField] private Transform phase1Parent;
+    [SerializeField] private Transform phase2Parent;
+    [SerializeField] private Transform phase3Parent;
 
+    [Header("Player Setup")]
     public Transform player;
 
     private List<GameObject> activeEnemies = new List<GameObject>();
     private List<GameObject> deactivatedObjects = new List<GameObject>();
+
+    private List<GameObject> phase1Objects = new List<GameObject>();
+    private List<GameObject> phase2Objects = new List<GameObject>();
+    private List<GameObject> phase3Objects = new List<GameObject>();
 
     private void Awake()
     {
@@ -39,6 +46,10 @@ public class Psychosis : MonoBehaviour
             postProcessVolume.profile.TryGetSettings(out vignette);
             postProcessVolume.profile.TryGetSettings(out colorGrading);
         }
+
+        FillPhaseObjects(phase1Parent, phase1Objects);
+        FillPhaseObjects(phase2Parent, phase2Objects);
+        FillPhaseObjects(phase3Parent, phase3Objects);
     }
 
     private void Update()
@@ -123,10 +134,11 @@ public class Psychosis : MonoBehaviour
             if (enemy == null) continue;
 
             Vector3 direction = (player.position - enemy.transform.position).normalized;
+            direction.y = 0;
 
             Quaternion lookRotation = Quaternion.LookRotation(direction);
 
-            enemy.transform.rotation = Quaternion.Slerp(enemy.transform.rotation,lookRotation,Time.deltaTime * 5f);
+            enemy.transform.rotation = Quaternion.Slerp(enemy.transform.rotation, lookRotation, Time.deltaTime * 5f);
         }
     }
 
@@ -153,6 +165,18 @@ public class Psychosis : MonoBehaviour
         {
             if (obj != null) obj.SetActive(true);
         }
-        deactivatedObjects.Clear(); 
+        deactivatedObjects.Clear();
+    }
+
+    private void FillPhaseObjects(Transform parent, List<GameObject> phaseObjects)
+    {
+        if (parent != null)
+        {
+            phaseObjects.Clear();
+            foreach (Transform child in parent)
+            {
+                phaseObjects.Add(child.gameObject);
+            }
+        }
     }
 }

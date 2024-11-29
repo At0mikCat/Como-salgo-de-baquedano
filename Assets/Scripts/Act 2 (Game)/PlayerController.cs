@@ -16,6 +16,12 @@ public class PlayerController : MonoBehaviour
 
     [Header("Exotic references")]
     public Psychosis psychosis;
+    public NavMeshAgent navMeshAgent;
+
+    [Header("Audio")]
+    public AudioSource terror0;
+    public AudioSource terror1;
+    public AudioSource terror2;
 
     [Header("External")]
     [SerializeField] private float fadeDuration = 1.5f;
@@ -126,16 +132,26 @@ public class PlayerController : MonoBehaviour
         {
             currentPhase = 1;
             psychosis.TriggerPsychosis(1);
+            navMeshAgent.speed = 4.8f;
+            navMeshAgent.stoppingDistance = 15f;
         }
         else if (other.CompareTag("Phase2") && currentPhase < 2)
         {
+            terror0.Stop();
+            terror1.Play();
             currentPhase = 2;
             psychosis.TriggerPsychosis(2);
+            navMeshAgent.stoppingDistance = 12f;
+            navMeshAgent.speed = 5.25f;
         }
         else if (other.CompareTag("Phase3") && currentPhase < 3)
         {
+            terror1.Stop();
+            terror2.Play();
             currentPhase = 3;
             psychosis.TriggerPsychosis(3);
+            navMeshAgent.stoppingDistance = 8f;
+            navMeshAgent.speed = 5.5f;
         }
     }
 
@@ -154,7 +170,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator End1()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
 
         float elapsedTime = 0f;
         while (elapsedTime < fadeDuration)
@@ -171,7 +187,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator End2()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
 
         float elapsedTime = 0f;
         while (elapsedTime < fadeDuration)
@@ -188,7 +204,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator End3()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
 
         float elapsedTime = 0f;
         while (elapsedTime < fadeDuration)
@@ -234,5 +250,4 @@ public class PlayerController : MonoBehaviour
         animator.enabled = false;
         isInCinematic = false;
     }
-
 }
