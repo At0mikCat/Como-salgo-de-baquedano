@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 9698
+  controlID: 43
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 9699
+  controlID: 44
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 9700
+  controlID: 45
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 9636
+  controlID: 46
   draggingID: 0
 --- !u!114 &9
 MonoBehaviour:
@@ -275,7 +275,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 9701
+  controlID: 102
   draggingID: 0
 --- !u!114 &12
 MonoBehaviour:
@@ -493,10 +493,10 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 2040}
-      m_SelectedIDs: 1866ffff
-      m_LastClickedID: -39400
-      m_ExpandedIDs: 00fbffffb660000038680000
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: f65c0000
+      m_LastClickedID: 23798
+      m_ExpandedIDs: 00fbffff685c0000805c0000b85c0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -902,9 +902,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 394.26514, y: -1.1817291, z: 144.44946}
+    m_Target: {x: 1325.086, y: 420.5205, z: -870.2129}
     speed: 2
-    m_Value: {x: 394.26514, y: -1.1817291, z: 144.44946}
+    m_Value: {x: 1325.086, y: 420.5205, z: -870.2129}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -950,13 +950,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.1975727, y: -0.37862292, z: 0.11030901, w: 0.89870775}
+    m_Target: {x: -0.006673493, y: -0.029957084, z: -0.0001866712, w: 0.9995593}
     speed: 2
-    m_Value: {x: 0.19869778, y: -0.37803438, z: 0.11075531, w: 0.8974088}
+    m_Value: {x: -0.00667329, y: -0.029956173, z: -0.00018666552, w: 0.9995289}
   m_Size:
-    m_Target: 13.28946
+    m_Target: 290.30252
     speed: 2
-    m_Value: 13.28946
+    m_Value: 290.30252
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1249,7 +1249,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1257,16 +1257,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 65
   m_LastFolders:
-  - Assets/Scenes
+  - Assets
   m_LastFoldersGridSize: 65
-  m_LastProjectPath: C:\Users\marce\OneDrive\Documentos\GitHub\Como-salgo-de-baquedano
+  m_LastProjectPath: C:\Users\agusa\Documents\GitHub\Como-salgo-de-baquedano
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 66}
-    m_SelectedIDs: 087c0000
-    m_LastClickedID: 31752
-    m_ExpandedIDs: 00000000dc7b0000de7b000000ca9a3b
+    m_SelectedIDs: 7a610000
+    m_LastClickedID: 24954
+    m_ExpandedIDs: 00000000786100007a61000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1294,7 +1294,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000dc7b0000de7b000000ca9a3b
+    m_ExpandedIDs: 00000000786100007a610000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1420,7 +1420,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 27744
+  m_LastSelectedObjectID: 23798
 --- !u!114 &22
 MonoBehaviour:
   m_ObjectHideFlags: 52
