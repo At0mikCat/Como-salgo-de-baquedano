@@ -3,7 +3,17 @@ guid: 11d7d4842635d6b4b8967a29c17adaba
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CabezaNPC3
+    second: {fileID: 2100000, guid: f400ab16d8f9724409f935cbb450aede, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CuerpoNPC3
+    second: {fileID: 2100000, guid: 3d58b7eafb32cfe409a4496dc768ba0f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
