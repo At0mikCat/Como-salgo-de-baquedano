@@ -26,8 +26,19 @@ public class Psychosis : MonoBehaviour
     [SerializeField] private Transform phase2Parent;
     [SerializeField] private Transform phase3Parent;
 
-    [Header("Player Setup")]
     public Transform player;
+
+    [Header("Hallucination Texts")]
+    [SerializeField] private List<GameObject> hallucinationTexts; 
+    [SerializeField] private float minFlashDuration = 0.1f; 
+    [SerializeField] private float maxFlashDuration = 0.5f; 
+
+    [SerializeField] private float minIntervalPhase2 = 2f; 
+    [SerializeField] private float maxIntervalPhase2 = 4f; 
+    [SerializeField] private float minIntervalPhase3 = 0.5f; 
+    [SerializeField] private float maxIntervalPhase3 = 2f; 
+
+    private Coroutine hallucinationCoroutine; 
 
     private List<GameObject> activeEnemies = new List<GameObject>();
     private List<GameObject> deactivatedObjects = new List<GameObject>();
@@ -61,51 +72,105 @@ public class Psychosis : MonoBehaviour
     {
         currentPhase = (PsychosisPhase)phase;
 
+        if (hallucinationCoroutine != null)
+        {
+            StopCoroutine(hallucinationCoroutine);
+            hallucinationCoroutine = null;
+        }
+
         switch (currentPhase)
         {
             case PsychosisPhase.Phase1:
-                StartCoroutine(ApplyPhase1());
+                StartCoroutine(TransitionEffects(0.3f, 0.2f, 10f, Vector4.zero));
                 ReplaceObjectsWithEnemies(phase1Objects);
                 break;
+
             case PsychosisPhase.Phase2:
-                StartCoroutine(ApplyPhase2());
+                StartCoroutine(TransitionEffects(0.5f, 0.4f, 20f, new Vector4(-0.2f, -0.2f, -0.2f, 0f)));
                 ReplaceObjectsWithEnemies(phase2Objects);
+                hallucinationCoroutine = StartCoroutine(FlashHallucinations());
                 break;
+
             case PsychosisPhase.Phase3:
-                StartCoroutine(ApplyPhase3());
+                StartCoroutine(TransitionEffects(1f, 0.6f, 40f, new Vector4(0.5f, 0.1f, 0.3f, 0f)));
                 ReplaceObjectsWithEnemies(phase3Objects);
+                hallucinationCoroutine = StartCoroutine(FlashHallucinations());
                 break;
         }
     }
 
-    private IEnumerator ApplyPhase1()
+    private IEnumerator FlashHallucinations()
     {
-        if (grain != null) grain.intensity.value = 0.3f;
-        if (vignette != null) vignette.intensity.value = 0.2f;
-        if (lensDistortion != null) lensDistortion.intensity.value = 10f;
+        while (currentPhase == PsychosisPhase.Phase2 || currentPhase == PsychosisPhase.Phase3)
+        {
+            if (hallucinationTexts.Count > 0)
+            {
+                int randomIndex = Random.Range(0, hallucinationTexts.Count);
+                GameObject hallucinationText = hallucinationTexts[randomIndex];
 
-        yield return new WaitForSeconds(5f);
+                if (hallucinationText != null)
+                {
+                    hallucinationText.SetActive(true);
+                    yield return new WaitForSeconds(Random.Range(minFlashDuration, maxFlashDuration));
+                    hallucinationText.SetActive(false);
+                }
+            }
+
+            float minInterval = currentPhase == PsychosisPhase.Phase2 ? minIntervalPhase2 : minIntervalPhase3;
+            float maxInterval = currentPhase == PsychosisPhase.Phase2 ? maxIntervalPhase2 : maxIntervalPhase3;
+
+            yield return new WaitForSeconds(Random.Range(minInterval, maxInterval));
+        }
+
+        foreach (var text in hallucinationTexts)
+        {
+            if (text != null)
+                text.SetActive(false);
+        }
+    }
+    private IEnumerator TransitionEffects(float targetGrain, float targetVignette, float targetLensDistortion, Vector4 targetLift)
+    {
+        float duration = 2f; 
+        float elapsed = 0f;
+
+        float initialGrain = grain?.intensity.value ?? 0f;
+        float initialVignette = vignette?.intensity.value ?? 0f;
+        float initialLensDistortion = lensDistortion?.intensity.value ?? 0f;
+        Vector4 initialLift = colorGrading?.lift.value ?? Vector4.zero;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / duration;
+
+            if (grain != null) grain.intensity.value = Mathf.Lerp(initialGrain, targetGrain, t);
+            if (vignette != null) vignette.intensity.value = Mathf.Lerp(initialVignette, targetVignette, t);
+            if (lensDistortion != null) lensDistortion.intensity.value = Mathf.Lerp(initialLensDistortion, targetLensDistortion, t);
+            if (colorGrading != null) colorGrading.lift.value = Vector4.Lerp(initialLift, targetLift, t);
+
+            yield return null;
+        }
+
+        if (grain != null) grain.intensity.value = targetGrain;
+        if (vignette != null) vignette.intensity.value = targetVignette;
+        if (lensDistortion != null) lensDistortion.intensity.value = targetLensDistortion;
+        if (colorGrading != null) colorGrading.lift.value = targetLift;
     }
 
-    private IEnumerator ApplyPhase2()
+
+    private void UpdateEnemiesLookAt()
     {
-        if (grain != null) grain.intensity.value = 0.5f;
-        if (vignette != null) vignette.intensity.value = 0.4f;
-        if (lensDistortion != null) lensDistortion.intensity.value = 20f;
-        if (colorGrading != null) colorGrading.saturation.value = -50f;
+        foreach (var enemy in activeEnemies)
+        {
+            if (enemy == null) continue;
 
-        yield return new WaitForSeconds(5f);
-    }
+            Vector3 direction = (player.position - enemy.transform.position).normalized;
+            direction.y = 0;
 
-    private IEnumerator ApplyPhase3()
-    {
-        if (grain != null) grain.intensity.value = 1f;
-        if (vignette != null) vignette.intensity.value = 0.6f;
-        if (lensDistortion != null) lensDistortion.intensity.value = 40f;
-        if (colorGrading != null) colorGrading.saturation.value = -100f;
-        if (depthOfField != null) depthOfField.focusDistance.value = 1f;
+            Quaternion lookRotation = Quaternion.LookRotation(direction);
 
-        yield return new WaitForSeconds(5f);
+            enemy.transform.rotation = Quaternion.Slerp(enemy.transform.rotation, lookRotation, Time.deltaTime * 5f);
+        }
     }
 
     private void ReplaceObjectsWithEnemies(List<GameObject> objects)
@@ -127,28 +192,15 @@ public class Psychosis : MonoBehaviour
         }
     }
 
-    private void UpdateEnemiesLookAt()
-    {
-        foreach (var enemy in activeEnemies)
-        {
-            if (enemy == null) continue;
-
-            Vector3 direction = (player.position - enemy.transform.position).normalized;
-            direction.y = 0;
-
-            Quaternion lookRotation = Quaternion.LookRotation(direction);
-
-            enemy.transform.rotation = Quaternion.Slerp(enemy.transform.rotation, lookRotation, Time.deltaTime * 5f);
-        }
-    }
-
     public void ResetEffects()
     {
-        if (grain != null) grain.intensity.value = 0f;
-        if (vignette != null) vignette.intensity.value = 0f;
-        if (lensDistortion != null) lensDistortion.intensity.value = 0f;
-        if (colorGrading != null) colorGrading.saturation.value = 0f;
-        if (depthOfField != null) depthOfField.focusDistance.value = 10f;
+        StartCoroutine(TransitionEffects(0f, 0f, 0f, Vector4.zero));
+
+        if (hallucinationCoroutine != null)
+        {
+            StopCoroutine(hallucinationCoroutine);
+            hallucinationCoroutine = null;
+        }
 
         ClearEnemy();
     }

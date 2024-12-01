@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{400D0436-2A92-B980-6C0D-1F36B4CB1261}|Assembly-CSharp.csproj|c:\\users\\marce\\onedrive\\documentos\\github\\como-salgo-de-baquedano\\assets\\scripts\\act 2 (game)\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{400D0436-2A92-B980-6C0D-1F36B4CB1261}|Assembly-CSharp.csproj|c:\\users\\marce\\onedrive\\documentos\\github\\como-salgo-de-baquedano\\assets\\scripts\\act 2 (game)\\psychosis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{400D0436-2A92-B980-6C0D-1F36B4CB1261}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\act 2 (game)\\psychosis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{400D0436-2A92-B980-6C0D-1F36B4CB1261}|Assembly-CSharp.csproj|C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\assets\\scripts\\act 2 (game)\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{400D0436-2A92-B980-6C0D-1F36B4CB1261}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\act 2 (game)\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{400D0436-2A92-B980-6C0D-1F36B4CB1261}|Assembly-CSharp.csproj|C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\assets\\scripts\\act 2 (game)\\ai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{400D0436-2A92-B980-6C0D-1F36B4CB1261}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\act 2 (game)\\ai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{400D0436-2A92-B980-6C0D-1F36B4CB1261}|Assembly-CSharp.csproj|C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\assets\\scripts\\act 2 (game)\\psychosis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{400D0436-2A92-B980-6C0D-1F36B4CB1261}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\act 2 (game)\\psychosis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{400D0436-2A92-B980-6C0D-1F36B4CB1261}|Assembly-CSharp.csproj|C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\assets\\scripts\\mainmenu\\starttrainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -86,11 +86,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "AI.cs",
               "DocumentMoniker": "C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\Assets\\Scripts\\Act 2 (Game)\\AI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Act 2 (Game)\\AI.cs",
@@ -208,28 +208,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Psychosis.cs",
               "DocumentMoniker": "C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\Assets\\Scripts\\Act 2 (Game)\\Psychosis.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Act 2 (Game)\\Psychosis.cs",
               "ToolTip": "C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\Assets\\Scripts\\Act 2 (Game)\\Psychosis.cs",
               "RelativeToolTip": "Assets\\Scripts\\Act 2 (Game)\\Psychosis.cs",
-              "ViewState": "AQIAADgAAAAAAAAAAAAwwBgAAAA0AAAA",
+              "ViewState": "AQIAAM8AAAAAAAAAAAA3wBsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T20:16:30.305Z"
+              "WhenOpened": "2024-11-25T20:16:30.305Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\Assets\\Scripts\\Act 2 (Game)\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Act 2 (Game)\\PlayerController.cs",
               "ToolTip": "C:\\Users\\marce\\OneDrive\\Documentos\\GitHub\\Como-salgo-de-baquedano\\Assets\\Scripts\\Act 2 (Game)\\PlayerController.cs",
               "RelativeToolTip": "Assets\\Scripts\\Act 2 (Game)\\PlayerController.cs",
-              "ViewState": "AQIAAH4AAAAAAAAAAAAAAJgAAAAtAAAA",
+              "ViewState": "AQIAAHsAAAAAAAAAAIBJwJgAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T21:32:49.645Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-26T21:32:49.645Z"
             },
             {
               "$type": "Document",
