@@ -81,18 +81,18 @@ public class Psychosis : MonoBehaviour
         switch (currentPhase)
         {
             case PsychosisPhase.Phase1:
-                StartCoroutine(TransitionEffects(0.3f, 0.2f, 10f, Vector4.zero));
+                StartCoroutine(TransitionEffects(0.4f, 0.2f, 15f, Vector4.zero, 10f, 2.8f));
                 ReplaceObjectsWithEnemies(phase1Objects);
                 break;
 
             case PsychosisPhase.Phase2:
-                StartCoroutine(TransitionEffects(0.5f, 0.4f, 20f, new Vector4(-0.2f, -0.2f, -0.2f, 0f)));
+                StartCoroutine(TransitionEffects(0.7f, 0.4f, 30f, new Vector4(-0.2f, -0.2f, -0.2f, 0f), 5f, 4f));
                 ReplaceObjectsWithEnemies(phase2Objects);
                 hallucinationCoroutine = StartCoroutine(FlashHallucinations());
                 break;
 
             case PsychosisPhase.Phase3:
-                StartCoroutine(TransitionEffects(1f, 0.6f, 40f, new Vector4(0.5f, 0.1f, 0.3f, 0f)));
+                StartCoroutine(TransitionEffects(1f, 0.6f, 40f, new Vector4(0.5f, 0.1f, 0.3f, 0f), 1f, 8f));
                 ReplaceObjectsWithEnemies(phase3Objects);
                 hallucinationCoroutine = StartCoroutine(FlashHallucinations());
                 break;
@@ -128,15 +128,18 @@ public class Psychosis : MonoBehaviour
                 text.SetActive(false);
         }
     }
-    private IEnumerator TransitionEffects(float targetGrain, float targetVignette, float targetLensDistortion, Vector4 targetLift)
+    private IEnumerator TransitionEffects(float targetGrain, float targetVignette, float targetLensDistortion, Vector4 targetLift, float targetFocusDistance, float targetAperture)
     {
-        float duration = 2f; 
+        float duration = 2f;
         float elapsed = 0f;
 
         float initialGrain = grain?.intensity.value ?? 0f;
         float initialVignette = vignette?.intensity.value ?? 0f;
         float initialLensDistortion = lensDistortion?.intensity.value ?? 0f;
         Vector4 initialLift = colorGrading?.lift.value ?? Vector4.zero;
+
+        float initialFocusDistance = depthOfField?.focusDistance.value ?? 0f;
+        float initialAperture = depthOfField?.aperture.value ?? 0f;
 
         while (elapsed < duration)
         {
@@ -147,6 +150,11 @@ public class Psychosis : MonoBehaviour
             if (vignette != null) vignette.intensity.value = Mathf.Lerp(initialVignette, targetVignette, t);
             if (lensDistortion != null) lensDistortion.intensity.value = Mathf.Lerp(initialLensDistortion, targetLensDistortion, t);
             if (colorGrading != null) colorGrading.lift.value = Vector4.Lerp(initialLift, targetLift, t);
+            if (depthOfField != null)
+            {
+                depthOfField.focusDistance.value = Mathf.Lerp(initialFocusDistance, targetFocusDistance, t);
+                depthOfField.aperture.value = Mathf.Lerp(initialAperture, targetAperture, t);
+            }
 
             yield return null;
         }
@@ -155,6 +163,11 @@ public class Psychosis : MonoBehaviour
         if (vignette != null) vignette.intensity.value = targetVignette;
         if (lensDistortion != null) lensDistortion.intensity.value = targetLensDistortion;
         if (colorGrading != null) colorGrading.lift.value = targetLift;
+        if (depthOfField != null)
+        {
+            depthOfField.focusDistance.value = targetFocusDistance;
+            depthOfField.aperture.value = targetAperture;
+        }
     }
 
 
@@ -190,19 +203,6 @@ public class Psychosis : MonoBehaviour
 
             activeEnemies.Add(enemy);
         }
-    }
-
-    public void ResetEffects()
-    {
-        StartCoroutine(TransitionEffects(0f, 0f, 0f, Vector4.zero));
-
-        if (hallucinationCoroutine != null)
-        {
-            StopCoroutine(hallucinationCoroutine);
-            hallucinationCoroutine = null;
-        }
-
-        ClearEnemy();
     }
 
     private void ClearEnemy()
