@@ -17,6 +17,7 @@ TagManager:
   - End2
   - StairsUp
   - StairsDown
+  - ActiveTrain
   layers:
   - Default
   - TransparentFX
