@@ -3,7 +3,12 @@ guid: 96f4e4924c1a2ab438d3f3427a9b3f7f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: escaleras
+    second: {fileID: 2100000, guid: 112be83e3ecf9324ab7b3b838285ca6d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

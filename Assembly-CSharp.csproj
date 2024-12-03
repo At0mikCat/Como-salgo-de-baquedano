@@ -793,14 +793,14 @@
     <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
       <HintPath>C:\Users\agusa\Documents\GitHub\Como-salgo-de-baquedano\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TestTools.CodeCoverage.Editor">
-      <HintPath>C:\Users\agusa\Documents\GitHub\Como-salgo-de-baquedano\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
       <HintPath>C:\Users\agusa\Documents\GitHub\Como-salgo-de-baquedano\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
     </Reference>
     <Reference Include="Unity.AI.Navigation.Updater">
       <HintPath>C:\Users\agusa\Documents\GitHub\Como-salgo-de-baquedano\Library\ScriptAssemblies\Unity.AI.Navigation.Updater.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TestTools.CodeCoverage.Editor">
+      <HintPath>C:\Users\agusa\Documents\GitHub\Como-salgo-de-baquedano\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Editor">
       <HintPath>C:\Users\agusa\Documents\GitHub\Como-salgo-de-baquedano\Library\ScriptAssemblies\Unity.Postprocessing.Editor.dll</HintPath>
