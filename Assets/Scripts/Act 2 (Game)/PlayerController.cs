@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     [Header("Exotic references")]
     public Psychosis psychosis;
     public NavMeshAgent navMeshAgent;
+    public GameObject trainLeft;
 
     [Header("Audio")]
     public AudioSource terror0;
@@ -126,6 +127,11 @@ public class PlayerController : MonoBehaviour
         {
             isInCinematic = true;
             StartCoroutine(Intro());
+        }
+
+        if (other.CompareTag("ActiveTrain"))
+        {
+            trainLeft.SetActive(true);
         }
 
         if (other.CompareTag("Phase1") && currentPhase < 1)

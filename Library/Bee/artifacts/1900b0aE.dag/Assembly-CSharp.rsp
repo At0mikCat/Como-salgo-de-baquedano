@@ -376,6 +376,7 @@
 "Assets/Scripts/Act 2 (Game)/PlayerController.cs"
 "Assets/Scripts/Act 2 (Game)/Psychosis.cs"
 "Assets/Scripts/Act 2 (Game)/StartGame.cs"
+"Assets/Scripts/Act 2 (Game)/VagonBehavior.cs"
 "Assets/Scripts/InstancingEntities.cs"
 "Assets/Scripts/MainMenu/StartTrainMenu.cs"
 -langversion:9.0

@@ -13,6 +13,6 @@ public class ToGame : MonoBehaviour
     IEnumerator gotogame()
     {
         yield return new WaitForSeconds(90f);
-        SceneManager.LoadScene("TestScene");
+        SceneManager.LoadScene("Acto2");
     }
 }
