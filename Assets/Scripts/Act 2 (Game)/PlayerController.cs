@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
@@ -13,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private Animator animator;
     bool isInCinematic = false;
+    private float currentMoveSpeed;
 
     [Header("Exotic references")]
     public Psychosis psychosis;
@@ -41,7 +43,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float duration = 300f;
 
     [SerializeField] private float timer = 0f;
-    private int currentPhase = 0; 
+    private int currentPhase = 0;
+
+    private bool isMovingToTarget = false;
+    private Transform targetPosition; 
+    [SerializeField] private float targetMoveSpeed = 3f; 
 
     private void Awake()
     {
@@ -53,26 +59,49 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (!isInCinematic)
+        HandleCameraMovement();
+
+        if (isMovingToTarget && targetPosition != null)
         {
-            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
-            transform.Rotate(Vector3.up * mouseX);
-            cameraTransform.localEulerAngles = Vector3.right * cameraLimit;
-            rb.velocity = transform.forward * movementSpeed * Input.GetAxis("Vertical")
-                          + transform.right * movementSpeed * Input.GetAxis("Horizontal");
+            MoveTowardsTarget();
+        }
+        else if (!isInCinematic)
+        {
+            HandlePlayerMovement(); 
+        }
 
-            timer += Time.deltaTime;
+        HandlePhaseByTime(); 
+    }
 
-            //final del desmayo
-            if(timer >= duration)
-            {
-                StartCoroutine(End3());
-            }
+    private void HandleCameraMovement()
+    {
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
+        transform.Rotate(Vector3.up * mouseX);
+        cameraTransform.localEulerAngles = Vector3.right * cameraLimit;
+    }
 
-            HandlePhaseByTime();
+    private void HandlePlayerMovement()
+    {
+        rb.velocity = transform.forward * movementSpeed * Input.GetAxis("Vertical")
+                      + transform.right * movementSpeed * Input.GetAxis("Horizontal");
+        timer += Time.deltaTime;
+
+        if (timer >= duration)
+        {
+            StartCoroutine(End3());
         }
     }
 
+    private void MoveTowardsTarget()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition.position, Time.deltaTime * targetMoveSpeed);
+
+        if (Vector3.Distance(transform.position, targetPosition.position) < 0.1f)
+        {
+            isMovingToTarget = false;
+            targetPosition = null;
+        }
+    }
     private void HandlePhaseByTime()
     {
         if (currentPhase < 1 && timer >= phase1Time)
@@ -96,25 +125,19 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("End1"))
         {
-            //final de salida
+            // Final de salida
             StartCoroutine(End1());
         }
 
         if (other.CompareTag("End2"))
         {
-            //final de cabina
+            // Final de cabina
             StartCoroutine(End2());
         }
 
         if (other.CompareTag("Enemy"))
         {
             StartCoroutine(Respawn());
-        }
-
-        if (other.CompareTag("StairsUp"))
-        {
-            //automatic movement 
-            movementSpeed = 8f;
         }
 
         if (other.CompareTag("Checkpoint"))
@@ -164,14 +187,41 @@ public class PlayerController : MonoBehaviour
             navMeshAgent.stoppingDistance = 8f;
             navMeshAgent.speed = 5.5f;
         }
+
+        if (other.CompareTag("TriggerLeft1") || other.CompareTag("TriggerLeft2") || other.CompareTag("TriggerLeft3") ||
+        other.CompareTag("TriggerRight1") || other.CompareTag("TriggerRight2") || other.CompareTag("TriggerRight3") ||
+        other.CompareTag("TriggerSolo1"))
+        {
+            targetPosition = other.transform.Find("Target");
+
+            if (targetPosition != null)
+            {
+                if (other.CompareTag("TriggerSolo1"))
+                {
+                    targetMoveSpeed = 4f; 
+                }
+                else
+                {
+                    targetMoveSpeed = 3f; 
+                }
+
+                isMovingToTarget = true;
+            }
+            else
+            {
+                Debug.LogWarning($"El Trigger {other.name} no tiene un 'Target' asignado.");
+            }
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("StairsUp"))
+        if (other.CompareTag("TriggerLeft1") || other.CompareTag("TriggerLeft2") || other.CompareTag("TriggerLeft3") ||
+            other.CompareTag("TriggerRight1") || other.CompareTag("TriggerRight2") || other.CompareTag("TriggerRight3") ||
+            other.CompareTag("TriggerSolo1"))
         {
-            movementSpeed = 6.2f;
-            //no automatic movement 
+            isMovingToTarget = false;
+            targetPosition = null;
         }
     }
 
