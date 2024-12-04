@@ -20,9 +20,12 @@ public class PlayerController : MonoBehaviour
     public GameObject trainLeft;
 
     [Header("Audio")]
-    public AudioSource terror0;
-    public AudioSource terror1;
-    public AudioSource terror2;
+    public AudioSource Latidos0;
+    public AudioSource Latidos1;
+    public AudioSource Latidos2;
+    public AudioSource Resp1;
+    public AudioSource Resp2;
+    public AudioSource Resp3;
 
     [Header("External")]
     [SerializeField] private float fadeDuration = 1.5f;
@@ -110,12 +113,8 @@ public class PlayerController : MonoBehaviour
 
         if (other.CompareTag("StairsUp"))
         {
+            //automatic movement 
             movementSpeed = 8f;
-        }
-
-        if (other.CompareTag("StairsDown"))
-        {
-            movementSpeed = 4f;
         }
 
         if (other.CompareTag("Checkpoint"))
@@ -136,6 +135,8 @@ public class PlayerController : MonoBehaviour
 
         if (other.CompareTag("Phase1") && currentPhase < 1)
         {
+            Latidos0.Play();
+            Resp1.Play();
             currentPhase = 1;
             psychosis.TriggerPsychosis(1);
             navMeshAgent.speed = 4.8f;
@@ -143,8 +144,10 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.CompareTag("Phase2") && currentPhase < 2)
         {
-            terror0.Stop();
-            terror1.Play();
+            Resp1.Stop();
+            Resp2.Play();
+            Latidos0.Stop();
+            Latidos1.Play();
             currentPhase = 2;
             psychosis.TriggerPsychosis(2);
             navMeshAgent.stoppingDistance = 12f;
@@ -152,8 +155,10 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.CompareTag("Phase3") && currentPhase < 3)
         {
-            terror1.Stop();
-            terror2.Play();
+            Resp2.Stop();
+            Resp3.Play();
+            Latidos1.Stop();
+            Latidos2.Play();
             currentPhase = 3;
             psychosis.TriggerPsychosis(3);
             navMeshAgent.stoppingDistance = 8f;
@@ -166,11 +171,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("StairsUp"))
         {
             movementSpeed = 6.2f;
-        }
-
-        if (other.CompareTag("StairsDown"))
-        {
-            movementSpeed = 6.2f;
+            //no automatic movement 
         }
     }
 
