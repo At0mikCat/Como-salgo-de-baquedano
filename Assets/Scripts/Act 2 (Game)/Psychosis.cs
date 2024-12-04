@@ -81,18 +81,18 @@ public class Psychosis : MonoBehaviour
         switch (currentPhase)
         {
             case PsychosisPhase.Phase1:
-                StartCoroutine(TransitionEffects(0.4f, 0.2f, 15f, Vector4.zero, 10f, 2.8f));
+                StartCoroutine(TransitionEffects(0.4f, 0.3f, 15f, new Vector4(0.05f, -0.05f, 0.05f, 0f), new Vector4(0.1f, 0.0f, -0.05f, 0f), new Vector4(0.0f, 0.0f, 0.15f, 0f), 10f, 2.8f));
                 ReplaceObjectsWithEnemies(phase1Objects);
                 break;
 
             case PsychosisPhase.Phase2:
-                StartCoroutine(TransitionEffects(0.7f, 0.4f, 30f, new Vector4(-0.2f, -0.2f, -0.2f, 0f), 5f, 4f));
+                StartCoroutine(TransitionEffects(0.4f, 0.6f, 15f, new Vector4(0.05f, -0.05f, 0.05f, 0f), new Vector4(0.1f, 0.0f, -0.05f, 0f), new Vector4(0.0f, 0.0f, 0.15f, 0f), 10f, 2.8f));
                 ReplaceObjectsWithEnemies(phase2Objects);
                 hallucinationCoroutine = StartCoroutine(FlashHallucinations());
                 break;
 
             case PsychosisPhase.Phase3:
-                StartCoroutine(TransitionEffects(1f, 0.6f, 40f, new Vector4(0.5f, 0.1f, 0.3f, 0f), 1f, 8f));
+                StartCoroutine(TransitionEffects(0.7f, 0.8f, 30f, new Vector4(0.2f, -0.2f, 0.2f, 0f), new Vector4(0.3f, 0.1f, -0.2f, 0f), new Vector4(0.0f, 0.1f, 0.5f, 0f), 5f, 4f));
                 ReplaceObjectsWithEnemies(phase3Objects);
                 hallucinationCoroutine = StartCoroutine(FlashHallucinations());
                 break;
@@ -128,7 +128,7 @@ public class Psychosis : MonoBehaviour
                 text.SetActive(false);
         }
     }
-    private IEnumerator TransitionEffects(float targetGrain, float targetVignette, float targetLensDistortion, Vector4 targetLift, float targetFocusDistance, float targetAperture)
+    private IEnumerator TransitionEffects(float targetGrain, float targetVignette, float targetLensDistortion, Vector4 targetLift, Vector4 targetGamma, Vector4 targetGain, float targetFocusDistance, float targetAperture)
     {
         float duration = 2f;
         float elapsed = 0f;
@@ -137,6 +137,8 @@ public class Psychosis : MonoBehaviour
         float initialVignette = vignette?.intensity.value ?? 0f;
         float initialLensDistortion = lensDistortion?.intensity.value ?? 0f;
         Vector4 initialLift = colorGrading?.lift.value ?? Vector4.zero;
+        Vector4 initialGamma = colorGrading?.gamma.value ?? Vector4.zero;
+        Vector4 initialGain = colorGrading?.gain.value ?? Vector4.zero;
 
         float initialFocusDistance = depthOfField?.focusDistance.value ?? 0f;
         float initialAperture = depthOfField?.aperture.value ?? 0f;
@@ -149,7 +151,12 @@ public class Psychosis : MonoBehaviour
             if (grain != null) grain.intensity.value = Mathf.Lerp(initialGrain, targetGrain, t);
             if (vignette != null) vignette.intensity.value = Mathf.Lerp(initialVignette, targetVignette, t);
             if (lensDistortion != null) lensDistortion.intensity.value = Mathf.Lerp(initialLensDistortion, targetLensDistortion, t);
-            if (colorGrading != null) colorGrading.lift.value = Vector4.Lerp(initialLift, targetLift, t);
+            if (colorGrading != null)
+            {
+                colorGrading.lift.value = Vector4.Lerp(initialLift, targetLift, t);
+                colorGrading.gamma.value = Vector4.Lerp(initialGamma, targetGamma, t);
+                colorGrading.gain.value = Vector4.Lerp(initialGain, targetGain, t);
+            }
             if (depthOfField != null)
             {
                 depthOfField.focusDistance.value = Mathf.Lerp(initialFocusDistance, targetFocusDistance, t);
@@ -159,10 +166,16 @@ public class Psychosis : MonoBehaviour
             yield return null;
         }
 
+        // Set final values
         if (grain != null) grain.intensity.value = targetGrain;
         if (vignette != null) vignette.intensity.value = targetVignette;
         if (lensDistortion != null) lensDistortion.intensity.value = targetLensDistortion;
-        if (colorGrading != null) colorGrading.lift.value = targetLift;
+        if (colorGrading != null)
+        {
+            colorGrading.lift.value = targetLift;
+            colorGrading.gamma.value = targetGamma;
+            colorGrading.gain.value = targetGain;
+        }
         if (depthOfField != null)
         {
             depthOfField.focusDistance.value = targetFocusDistance;
