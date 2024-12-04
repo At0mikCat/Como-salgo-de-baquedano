@@ -17,6 +17,14 @@ TagManager:
   - End2
   - StairsUp
   - StairsDown
+  - ActiveTrain
+  - TriggerLeft1
+  - TriggerRight1
+  - TriggerLeft2
+  - TriggerRight2
+  - TriggerSolo1
+  - TriggerLeft3
+  - TriggerRight3
   layers:
   - Default
   - TransparentFX
