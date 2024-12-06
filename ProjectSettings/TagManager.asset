@@ -25,6 +25,10 @@ TagManager:
   - TriggerSolo1
   - TriggerLeft3
   - TriggerRight3
+  - Dialogue
+  - Zone2
+  - Zone3
+  - EnemyTrollTrigger
   layers:
   - Default
   - TransparentFX

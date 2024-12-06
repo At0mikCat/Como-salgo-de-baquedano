@@ -28,15 +28,17 @@ public class Psychosis : MonoBehaviour
 
     public Transform player;
 
-    [Header("Hallucination Texts")]
-    [SerializeField] private List<GameObject> hallucinationTexts; 
-    [SerializeField] private float minFlashDuration = 0.1f; 
-    [SerializeField] private float maxFlashDuration = 0.5f; 
+    [SerializeField] private Transform hallucinationParent;
+    [SerializeField] private float minFlashDuration = 0.1f;
+    [SerializeField] private float maxFlashDuration = 0.3f;
 
-    [SerializeField] private float minIntervalPhase2 = 2f; 
-    [SerializeField] private float maxIntervalPhase2 = 4f; 
-    [SerializeField] private float minIntervalPhase3 = 0.5f; 
-    [SerializeField] private float maxIntervalPhase3 = 2f; 
+    [SerializeField] private float minIntervalPhase2 = 1f; 
+    [SerializeField] private float maxIntervalPhase2 = 2f;
+
+    [SerializeField] private float minIntervalPhase3 = 0.3f; 
+    [SerializeField] private float maxIntervalPhase3 = 1f;
+
+    private List<GameObject> hallucinationTexts = new List<GameObject>();
 
     private Coroutine hallucinationCoroutine; 
 
@@ -49,6 +51,15 @@ public class Psychosis : MonoBehaviour
 
     private void Awake()
     {
+        if (hallucinationParent != null)
+        {
+            foreach (Transform child in hallucinationParent)
+            {
+                hallucinationTexts.Add(child.gameObject);
+                child.gameObject.SetActive(false); 
+            }
+        }
+
         if (postProcessVolume != null)
         {
             postProcessVolume.profile.TryGetSettings(out depthOfField);
@@ -92,7 +103,7 @@ public class Psychosis : MonoBehaviour
                 break;
 
             case PsychosisPhase.Phase3:
-                StartCoroutine(TransitionEffects(0.7f, 0.8f, 30f, new Vector4(0.2f, -0.2f, 0.2f, 0f), new Vector4(0.3f, 0.1f, -0.2f, 0f), new Vector4(0.0f, 0.1f, 0.5f, 0f), 5f, 4f));
+                StartCoroutine(TransitionEffects(0.7f, 0.65f, 30f, new Vector4(0.1f, -0.05f, 0.05f, 0f), new Vector4(0.2f, 0.1f, -0.05f, 0f), new Vector4(0.1f, 0.1f, 0.1f, 0f), 5f, 4f));
                 ReplaceObjectsWithEnemies(phase3Objects);
                 hallucinationCoroutine = StartCoroutine(FlashHallucinations());
                 break;
@@ -110,9 +121,9 @@ public class Psychosis : MonoBehaviour
 
                 if (hallucinationText != null)
                 {
-                    hallucinationText.SetActive(true);
+                    hallucinationText.SetActive(true); 
                     yield return new WaitForSeconds(Random.Range(minFlashDuration, maxFlashDuration));
-                    hallucinationText.SetActive(false);
+                    hallucinationText.SetActive(false); 
                 }
             }
 
@@ -128,6 +139,7 @@ public class Psychosis : MonoBehaviour
                 text.SetActive(false);
         }
     }
+
     private IEnumerator TransitionEffects(float targetGrain, float targetVignette, float targetLensDistortion, Vector4 targetLift, Vector4 targetGamma, Vector4 targetGain, float targetFocusDistance, float targetAperture)
     {
         float duration = 2f;
@@ -166,7 +178,6 @@ public class Psychosis : MonoBehaviour
             yield return null;
         }
 
-        // Set final values
         if (grain != null) grain.intensity.value = targetGrain;
         if (vignette != null) vignette.intensity.value = targetVignette;
         if (lensDistortion != null) lensDistortion.intensity.value = targetLensDistortion;
