@@ -23,28 +23,25 @@ public class PlayerController : MonoBehaviour
 
     [Header("Audio")]
     public AudioSource Latidos;
-    public AudioClip Latidos0;
-    public AudioClip Latidos1;
-    public AudioClip Latidos2;
-    public AudioClip Latidos3;
+    public AudioSource Latidos1;
+    public AudioSource Latidos2;
 
     public AudioSource Resp;
-    public AudioClip Resp1;
-    public AudioClip Resp2;
-    public AudioClip Resp3;
+    public AudioSource Resp1;
+    public AudioSource Resp2;
 
-    public AudioSource DialogosPJ;
-    public AudioClip DialogoF0;
-    public AudioClip DialogoF1;
-    public AudioClip DialogoF2;
-    public AudioClip DialogoF3;
-
+    public AudioSource BG;
+    public AudioSource BG1;
+    public AudioSource BG2;
+    public AudioSource BG3;
 
     [Header("External")]
     [SerializeField] private float fadeDuration = 1.5f;
     [SerializeField] private CanvasGroup fadeCanvasGroup;
     [SerializeField] private Transform cameraTransform;
     private Vector3 checkpointPosition;
+    public GameObject zona2;
+    public GameObject zona3;
 
     [Header("Phase Timing")]
     [SerializeField] private float phase1Time = 30f;
@@ -135,7 +132,6 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("End1"))
         {
-            // Final de salida
             StartCoroutine(End1());
         }
 
@@ -145,10 +141,24 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(End2());
         }
 
-        if (other.CompareTag("Enemy"))
+        if(other.CompareTag("Zone2"))
         {
-            //StartCoroutine(Respawn());
-            SceneManager.LoadScene("End3");
+            zona2.SetActive(true);
+        }
+
+        if (other.CompareTag("Zone3"))
+        {
+            zona3.SetActive(true);
+        }
+
+        if(other.CompareTag("Enemy"))
+        {
+            StartCoroutine(Respawn());
+        }
+
+        if (other.CompareTag("EnemyTrollTrigger"))
+        {
+            navMeshAgent.stoppingDistance = 3;
         }
 
         if (other.CompareTag("Checkpoint"))
@@ -169,9 +179,9 @@ public class PlayerController : MonoBehaviour
 
         if (other.CompareTag("Phase1") && currentPhase < 1)
         {
-            Latidos.clip = Latidos1;
-            Resp.clip = Resp1;
-            DialogosPJ.clip = DialogoF1;
+            BG.Stop();
+            BG1.Play();
+            Resp.Play();
             currentPhase = 1;
             psychosis.TriggerPsychosis(1);
             navMeshAgent.speed = 4.8f;
@@ -179,9 +189,11 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.CompareTag("Phase2") && currentPhase < 2)
         {
-            Latidos.clip = Latidos2;
-            Resp.clip = Resp2;
-            DialogosPJ.clip = DialogoF2;
+            BG1.Stop();
+            BG2.Play();
+            Latidos.Stop();
+            Latidos1.Play();
+            Resp1.Play();
             currentPhase = 2;
             psychosis.TriggerPsychosis(2);
             navMeshAgent.stoppingDistance = 12f;
@@ -189,9 +201,12 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.CompareTag("Phase3") && currentPhase < 3)
         {
-            Latidos.clip = Latidos3;
-            Resp.clip = Resp3;
-            DialogosPJ.clip = DialogoF3;
+            BG2.Stop();
+            BG3.Play();
+            Latidos1.Stop();
+            Latidos2.Play();
+            Resp1.Stop();
+            Resp2.Play();
             currentPhase = 3;
             psychosis.TriggerPsychosis(3);
         }

@@ -10,7 +10,7 @@ EditorBuildSettings:
     guid: 426cbb024130b6344a0898de6c350f20
   - enabled: 1
     path: Assets/Scenes/Acto1.unity
-    guid: b76940ce775757d4ebf7863aec2820c9
+    guid: 79d4860ba6eec1b48950464dfa2feaa3
   - enabled: 1
     path: Assets/Scenes/Acto2.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/End3.unity
     guid: 34a6c5729d326614c9d23b42e7b10eb1
+  - enabled: 1
+    path: Assets/Scenes/EndEnd.unity
+    guid: 822444173b400164c8334558e745f060
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 6d958e147b6de8c4b9f67c4459cb8848
   m_configObjects: {}

@@ -302,6 +302,7 @@
 -r:"Library/PackageCache/com.unity.visualscripting@1.9.4/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/Unity.AI.Navigation.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/Unity.Postprocessing.Runtime.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aP.dag/Unity.ProBuilder.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/Unity.TextMeshPro.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/Unity.Timeline.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/Unity.VisualScripting.Core.ref.dll"
@@ -316,12 +317,18 @@
 "Assets/External Packages/PSXShaderKit/Scripts/PSXShaderManager.cs"
 "Assets/Scripts/Act 1/ToGame.cs"
 "Assets/Scripts/Act 2 (Game)/AI.cs"
-"Assets/Scripts/Act 2 (Game)/Audio3D.cs"
 "Assets/Scripts/Act 2 (Game)/PlayerController.cs"
 "Assets/Scripts/Act 2 (Game)/Psychosis.cs"
 "Assets/Scripts/Act 2 (Game)/StartGame.cs"
+"Assets/Scripts/Act 2 (Game)/TextGoBrr.cs"
+"Assets/Scripts/Act 2 (Game)/VagonBehavior.cs"
+"Assets/Scripts/Dialogue/DialogueManager.cs"
+"Assets/Scripts/Dialogue/DialogueTrigger.cs"
+"Assets/Scripts/Dialogue/PlayerPrefs.cs"
+"Assets/Scripts/FadeEndEnd.cs"
 "Assets/Scripts/InstancingEntities.cs"
 "Assets/Scripts/MainMenu/StartTrainMenu.cs"
+"Assets/Scripts/SoundManager.cs"
 -langversion:9.0
 /deterministic
 /optimize+

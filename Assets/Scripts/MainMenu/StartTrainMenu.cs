@@ -9,12 +9,16 @@ public class StartTrainMenu : MonoBehaviour
     [SerializeField] private GameObject panel;
 
     [SerializeField] private CanvasGroup fadeCanvasGroup; 
-    [SerializeField] private CanvasGroup startButtonCanvas; 
+    [SerializeField] private CanvasGroup startButtonCanvas;
+    [SerializeField] private CanvasGroup optionsButtonCanvas;
     [SerializeField] private CanvasGroup exitButtonCanvas; 
     [SerializeField] private CanvasGroup logoCanvas; 
     [SerializeField] private float fadeDuration = 1.5f;
 
     [SerializeField] private bool hasPressedButton;
+
+    public GameObject panelPlay;
+    public GameObject panelOptions;
 
     private void Awake()
     {
@@ -38,6 +42,18 @@ public class StartTrainMenu : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    public void OpenOptions()
+    {
+        panelPlay.SetActive(false);
+        panelOptions.SetActive(true);
+    }
+
+    public void CloseOptions()
+    {
+        panelPlay.SetActive(true);
+        panelOptions.SetActive(false);
+    }
+
     public void ExitGame()
     {
         hasPressedButton = true;
@@ -56,6 +72,7 @@ public class StartTrainMenu : MonoBehaviour
             if (hasPressedButton)
             {
                 startButtonCanvas.alpha = Mathf.Lerp(0f, 1f, elapsedTime / fadeDuration);
+                optionsButtonCanvas.alpha = Mathf.Lerp(0f, 1f, elapsedTime / fadeDuration);
                 exitButtonCanvas.alpha = Mathf.Lerp(0f, 1f, elapsedTime / fadeDuration);
             }
 
@@ -78,6 +95,7 @@ public class StartTrainMenu : MonoBehaviour
                 elapsedTime1 += Time.deltaTime;
                 
                 startButtonCanvas.alpha = Mathf.Lerp(1f, 0f, elapsedTime1 / fadeDuration);
+                optionsButtonCanvas.alpha = Mathf.Lerp(1f, 0f, elapsedTime1 / fadeDuration);
                 exitButtonCanvas.alpha = Mathf.Lerp(1f, 0f, elapsedTime1 / fadeDuration);
 
                 yield return null;
